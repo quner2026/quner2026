@@ -1,5 +1,5 @@
 # Hello there! 🥰👋
-[![quner's GitHub stats](https://github-readme-stats.vercel.app/api?username=quner202&show_icons=true6&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+[![quner's GitHub stats](https://github-readme-stats.vercel.app/api?username=quner2026&show_icons=true6&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=quner2026&show_icons=true&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
 <div>
