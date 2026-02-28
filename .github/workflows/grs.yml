@@ -13,32 +13,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. 生成你的整体统计卡片 (Stats)
+      # 1. 整体统计卡片 (开启私有仓库统计)
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          # 【修改点】在这里加上了 &count_private=true
-          options: username=quner2026&show_icons=true&theme=radical&count_private=true
+          # 使用 JSON 格式，精准传递 count_private: true
+          options: '{"username":"quner2026","show_icons":true,"theme":"radical","count_private":true}'
           path: profile/stats.svg
-          # 【修改点】换成你的私钥变量
           token: ${{ secrets.GH_PAT }}
 
-      # 2. 生成你的常用语言卡片 (Top Langs)
+      # 2. 常用语言卡片 (剔除 HTML 和 Jupyter Notebook)
       - name: Generate top languages card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          # 【修改点】在最后加上了 &hide=html,jupyter%20notebook
-          options: username=quner2026&show_icons=true&layout=compact&theme=radical&hide=html,jupyter%20notebook
+          # JSON 格式下直接打空格，注意大小写匹配
+          options: '{"username":"quner2026","show_icons":true,"layout":"compact","theme":"radical","hide":"html,Jupyter Notebook"}'
           path: profile/top-langs.svg
           token: ${{ secrets.GH_PAT }}
 
-      # 3. 提交并推送
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "自动更新 GitHub 统计卡片 (包含私有数据)" || exit 0
+          git commit -m "修复参数失效问题" || exit 0
           git push
