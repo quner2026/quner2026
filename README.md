@@ -1,9 +1,8 @@
 # Hello there! 🥰👋
 
-[![quner's GitHub stats](https://github-readme-stats.vercel.app/api?username=quner2026&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+[![quner's GitHub stats](./profile/stats.svg)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=quner2026&show_icons=true&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
-- #### For project confidentiality, the leaderboard only displays public project stats.
+[![Top Langs](./profile/top-langs.svg)](https://github-com/anuraghazra/github-readme-stats)
 
 <div>
 </div>
