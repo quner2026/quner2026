@@ -29,9 +29,9 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: username=quner2026&show_icons=true&layout=compact&theme=radical
+          # 【修改点】在最后加上了 &hide=html,jupyter%20notebook
+          options: username=quner2026&show_icons=true&layout=compact&theme=radical&hide=html,jupyter%20notebook
           path: profile/top-langs.svg
-          # 【修改点】换成你的私钥变量
           token: ${{ secrets.GH_PAT }}
 
       # 3. 提交并推送
