@@ -1,0 +1,44 @@
+name: Update README cards
+on:
+  schedule:
+    - cron: "0 0 * * *" # 每天运行一次更新数据
+  workflow_dispatch: # 允许你在网页上随时手动点击运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 必须要有写入权限，Action 才能把生成的图片存进你的仓库
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. 生成你的整体统计卡片 (Stats)
+      - name: Generate stats card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          # 【修改点】在这里加上了 &count_private=true
+          options: username=quner2026&show_icons=true&theme=radical&count_private=true
+          path: profile/stats.svg
+          # 【修改点】换成你的私钥变量
+          token: ${{ secrets.GH_PAT }}
+
+      # 2. 生成你的常用语言卡片 (Top Langs)
+      - name: Generate top languages card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: username=quner2026&show_icons=true&layout=compact&theme=radical
+          path: profile/top-langs.svg
+          # 【修改点】换成你的私钥变量
+          token: ${{ secrets.GH_PAT }}
+
+      # 3. 提交并推送
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "自动更新 GitHub 统计卡片 (包含私有数据)" || exit 0
+          git push
