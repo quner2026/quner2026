@@ -1,8 +1,11 @@
 # Hello there! 🥰👋
 
-[![quner's GitHub stats](./profile/stats.svg)](https://github.com/anuraghazra/github-readme-stats)
-
-[![Top Langs](./profile/top-langs.svg)](https://github.com/anuraghazra/github-readme-stats)
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="./profile/stats.svg" height="165" />
+</a>
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="./profile/top-langs.svg" height="165" />
+</a>
 
 <div>
 </div>
